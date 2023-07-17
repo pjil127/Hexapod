@@ -54,7 +54,7 @@ void loop() {
     // Want 0 <= t <= 1 for Bezier Curve
     for (int i = 0; i <= 100; i++) {
         float t = i / 100.0;
-        Coordinates points = calculateBezierPoint(t, p0, p1, p2);
+        Coordinates points = calculate_bezier_points(t, p0, p1, p2);
         Angles angles = calculate_inverse_kinematics(points);
         commander.move_leg(angles, Hexapod.leg1);
     }

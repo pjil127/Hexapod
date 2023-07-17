@@ -39,7 +39,7 @@ class Command {
             pwm.setPWM(leg.pin2, 0, angle.servo2);
         }
 
-        void stop_leg(Angles angle, Leg leg){
+        void stop_leg(Leg leg){
             // Stops all servos in one leg from moving
             pwm.setPWM(leg.pin0, 0, 0);
             pwm.setPWM(leg.pin1, 0, 0);
