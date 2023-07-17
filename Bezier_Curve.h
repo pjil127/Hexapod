@@ -12,12 +12,12 @@
 // Quadratic Bezier's Curve takes in 3 points/coordinates. This function
 // generates the control point -- the point between start and end points.
 // Calculates the midpoint of start and end points!
-Coordinates generate_control_point(Coordinates c0, Coordinates c2) {
-    Coordinates c1;
-    c1.x = (c0.x + c2.x) / 2;
-    c1.y = (c0.y + c2.y) / 2;
-    c1.z = (c0.z + c2.z) / 2;
-    return c1;
+Coordinates generate_control_point(Coordinates start, Coordinates end) {
+    Coordinates mid;
+    mid.x = (start.x + end.x) / 2;
+    mid.y = (start.y + end.y) / 2;
+    mid.z = (start.z + end.z) / 2;
+    return mid;
 }
 
 // Quadratic Bezier's Curve that gives back x,y,z points.
