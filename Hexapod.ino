@@ -49,12 +49,12 @@ void setup() {
 void loop() {
     Coordinates start = {0, 0, 0};
     Coordinates end = {1, 1, 1};
-    Coordinates control_point = generate_control_point(start, end);
+    Coordinates control = generate_control_point(start, end);
 
     // Want 0 <= t <= 1 for Bezier Curve
     for (int i = 0; i <= 100; i++) {
         float t = i / 100.0;
-        Coordinates points = calculate_bezier_points(t, p0, p1, p2);
+        Coordinates points = calculate_bezier_points(t, start, control, end);
         Angles angles = calculate_inverse_kinematics(points);
         commander.move_leg(angles, Hexapod.leg1);
     }
